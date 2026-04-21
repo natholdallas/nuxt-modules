@@ -1,0 +1,6 @@
+{
+	"name": "@natholdallas/i18n",
+	"devDependencies": {
+		"@nuxt/kit": "^4.4.2"
+	}
+}
