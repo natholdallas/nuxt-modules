@@ -1,5 +1,7 @@
 {
 	"name": "@natholdallas/i18n",
+	"version": "1.0.0",
+	"description": "i18n nuxt module",
 	"devDependencies": {
 		"@nuxt/kit": "^4.4.2"
 	}
