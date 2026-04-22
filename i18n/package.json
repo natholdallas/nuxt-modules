@@ -1,9 +1,9 @@
 {
-	"name": "@natholdallas/i18n",
-	"version": "1.0.0",
-	"main": "index.ts",
-	"description": "i18n nuxt module",
-	"devDependencies": {
-		"@nuxt/kit": "^4.4.2"
-	}
+  "name": "@natholdallas/i18n",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "i18n nuxt module",
+  "devDependencies": {
+    "@nuxt/kit": "^4.4.2"
+  }
 }

@@ -1,9 +1,9 @@
 {
-	"name": "@natholdallas/kit",
-	"version": "1.0.0",
-	"main": "index.ts",
-	"description": "nuxt kit module",
-	"devDependencies": {
-		"@nuxt/kit": "^4.4.2"
-	}
+  "name": "@natholdallas/kit",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "nuxt kit module",
+  "devDependencies": {
+    "@nuxt/kit": "^4.4.2"
+  }
 }
