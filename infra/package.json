@@ -1,0 +1,28 @@
+{
+  "name": "@natholdallas/infra",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "nuxt infrastructure module",
+  "dependencies": {
+    "@vee-validate/zod": "^4.15.1",
+    "@vueuse/core": "^14.2.1",
+    "@vueuse/nuxt": "^14.2.0",
+    "@nuxtjs/seo": "^3.4.0",
+    "dayjs-nuxt": "^2.1.11",
+    "vee-validate": "^4.15.1",
+    "defu": "^6.1.4",
+    "zod": "^3.24.0",
+    "copy-to-clipboard": "^4.0.0",
+    "nuxt": "^4.4.2",
+    "qrcode": "^1.5.4",
+    "vue": "^3.5.32",
+    "vue-router": "^5.0.6",
+    "lodash": "^4.18.1"
+  },
+  "devDependencies": {
+    "@types/lodash": "4.17.24",
+    "@types/qrcode": "^1.5.6",
+    "@nuxt/kit": "^4.4.2",
+    "typescript": "^6.0.3"
+  }
+}

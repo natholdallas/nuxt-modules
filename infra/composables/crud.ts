@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash'
+import cloneDeep from 'lodash/cloneDeep'
 import { ref, shallowRef } from 'vue'
 
 // Example:
@@ -20,6 +20,20 @@ export function useCrud<I, O = I>(mi?: I, mo?: O) {
       crud.sr.value = false
       crud.mi.value = cloneDeep(mi)
       crud.mo.value = cloneDeep(mo)
+    },
+    smc(mi?: I) {
+      if (!mi) {
+        crud.mi.value = cloneDeep(mi)
+      }
+      crud.sc.value = true
+    },
+    smu(mo: O) {
+      crud.mo.value = cloneDeep(mo)
+      crud.su.value = true
+    },
+    smr(mo: O) {
+      crud.mo.value = cloneDeep(mo)
+      crud.sr.value = true
     },
   }
 }

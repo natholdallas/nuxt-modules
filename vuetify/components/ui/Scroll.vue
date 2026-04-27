@@ -1,6 +1,6 @@
 <template>
   <div class="overflow-auto h-full">
-    <div class="flexcol gap-1">
+    <div class="flex flex-col gap-1">
       <slot></slot>
     </div>
   </div>

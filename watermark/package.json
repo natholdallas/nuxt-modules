@@ -1,0 +1,9 @@
+{
+  "name": "@natholdallas/watermark",
+  "version": "0.1.0",
+  "main": "index.ts",
+  "desciption": "watermark module",
+  "dependencies": {
+    "defu": "^6.1.4"
+  }
+}

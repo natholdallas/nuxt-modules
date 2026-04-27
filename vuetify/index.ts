@@ -47,6 +47,8 @@ export default defineNuxtModule({
         },
       },
     },
+    '@natholdallas/i18n': {},
+    '@natholdallas/infra': {},
   },
 
   setup() {

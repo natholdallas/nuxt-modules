@@ -1,3 +1,5 @@
+import { shallowReactive } from 'vue'
+
 export const dialog = shallowReactive<Dialog>({
   show: false,
   title: undefined,

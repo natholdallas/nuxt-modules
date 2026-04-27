@@ -40,8 +40,8 @@ export default {
   'create': 'Create',
   'update': 'Update',
   'total': 'Total',
-  'remove': 'remove',
-  'select': 'select',
+  'remove': 'Remove',
+  'select': 'Select',
   'enabled': 'Enabled',
   'disabled': 'Disabled',
 

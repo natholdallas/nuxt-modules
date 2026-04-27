@@ -1,4 +1,4 @@
-import { cloneDeep } from 'lodash'
+import cloneDeep from 'lodash/cloneDeep'
 
 export function inst<T extends {} = {}>(model: T, s?: Partial<T>): T {
   return Object.assign(cloneDeep(model), s)

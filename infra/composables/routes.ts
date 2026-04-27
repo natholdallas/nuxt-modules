@@ -1,3 +1,5 @@
+import { useRouter } from 'nuxt/app'
+
 export function useQueryStr(query: string, defaultValue?: string, fallback?: VoidFunction) {
   const router = useRouter()
   const result = router.currentRoute.value.query[query] as string

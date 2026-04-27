@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { snackbar } from '../../composables/snackbar'
+</script>
+
 <template>
   <VSnackbar v-model="snackbar.show" :timeout="snackbar.timeout" location="top">
     {{ snackbar.message }}

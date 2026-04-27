@@ -2,7 +2,6 @@ import { createAlova, Method, type AlovaGenerics, type CacheConfig, type Request
 import type { AlovaFrontMiddleware } from 'alova/client'
 import adapterFetch from 'alova/fetch'
 import VueHook from 'alova/vue'
-import { isEmpty } from 'lodash'
 
 export type Arg = Record<string, any> & { length?: never }
 export type RequestConfig<T = any> = Partial<{
@@ -82,19 +81,31 @@ export function sneakyfetch(baseURL?: string, ...g: FetchHandler[]) {
       Post<T = void>(c: RequestConfig<T> = {}, ...h: FetchHandler<T>[]) {
         g.forEach((execute) => execute(c))
         h.forEach((execute) => execute(c))
-        return alova.Post<T>(mku(baseUrl, c.sub, c.params), mkd(c.data, c.includes, c.excludes), mkc(c))
+        return alova.Post<T>(
+          mku(baseUrl, c.sub, c.params),
+          mkd(c.data, c.includes, c.excludes),
+          mkc(c),
+        )
       },
 
       Put<T = void>(c: RequestConfig<T> = {}, ...h: FetchHandler<T>[]) {
         g.forEach((execute) => execute(c))
         h.forEach((execute) => execute(c))
-        return alova.Put<T>(mku(baseUrl, c.sub, c.params), mkd(c.data, c.includes, c.excludes), mkc(c))
+        return alova.Put<T>(
+          mku(baseUrl, c.sub, c.params),
+          mkd(c.data, c.includes, c.excludes),
+          mkc(c),
+        )
       },
 
       Delete<T = void>(c: RequestConfig<T> = {}, ...h: FetchHandler<T>[]) {
         g.forEach((execute) => execute(c))
         h.forEach((execute) => execute(c))
-        return alova.Delete<T>(mku(baseUrl, c.sub, c.params), mkd(c.data, c.includes, c.excludes), mkc(c))
+        return alova.Delete<T>(
+          mku(baseUrl, c.sub, c.params),
+          mkd(c.data, c.includes, c.excludes),
+          mkc(c),
+        )
       },
 
       Head<T = void>(c: RequestConfig<T> = {}, ...h: FetchHandler<T>[]) {
@@ -112,7 +123,11 @@ export function sneakyfetch(baseURL?: string, ...g: FetchHandler[]) {
       Patch<T = void>(c: RequestConfig<T> = {}, ...h: FetchHandler<T>[]) {
         g.forEach((execute) => execute(c))
         h.forEach((execute) => execute(c))
-        return alova.Patch<T>(mku(baseUrl, c.sub, c.params), mkd(c.data, c.includes, c.excludes), mkc(c))
+        return alova.Patch<T>(
+          mku(baseUrl, c.sub, c.params),
+          mkd(c.data, c.includes, c.excludes),
+          mkc(c),
+        )
       },
     }
   }
@@ -125,12 +140,18 @@ export function sneakyfetch(baseURL?: string, ...g: FetchHandler[]) {
 }
 
 function mkd(data?: any, includes?: string[], excludes?: string[]) {
-  console.log(isPlainObject(data))
   if (isPlainObject(data)) {
-    const res: Record<string, any> = {}
-    includes?.forEach((x) => (res[x] = data[x]))
-    excludes?.forEach((x) => delete res[x])
-    return isEmpty(res) ? data : res
+    let res: Record<string, any> = { ...data }
+    if (includes && includes.length > 0) {
+      res = {}
+      includes.forEach((x) => {
+        if (x in data) res[x] = data[x]
+      })
+    }
+    if (excludes && excludes.length > 0) {
+      excludes.forEach((x) => delete res[x])
+    }
+    return res
   }
   return data
 }
@@ -149,10 +170,9 @@ function mkc(c: RequestConfig<any> = {}) {
 }
 
 function mku(baseURL: string = '', subURL: string = '', params: any[] = []) {
-  const p = params?.filter((x) => !!x)
-  const path = isEmpty(p) ? '' : toStart(p.join('/'))
-  const sub = !!subURL ? trimEnd(toStart(subURL)) : ''
-  return baseURL + sub + path
+  const pList = params?.filter(Boolean) || []
+  const parts = [baseURL, subURL, ...pList].filter(Boolean)
+  return parts.join('/').replace(/(?<!:)\/{2,}/g, '/')
 }
 
 function isPlainObject(val: any): val is Record<string, any> {
@@ -171,17 +191,11 @@ function isPlainObject(val: any): val is Record<string, any> {
 }
 
 export type Mid = () => Promise<boolean> | boolean
-export function middlewares<AG extends AlovaGenerics, Args extends any[]>(...s: Mid[]): AlovaFrontMiddleware<AG, Args> {
+export function middlewares<AG extends AlovaGenerics, Args extends any[]>(
+  ...s: Mid[]
+): AlovaFrontMiddleware<AG, Args> {
   return async (_, next) => {
     for (const fn of s) if (!(await fn())) return
     next()
   }
-}
-
-function toStart(url: string, char: string = '/') {
-  return url.startsWith(char) ? url : `${char}${url}`
-}
-
-function trimEnd(url: string, char: string = '/') {
-  return url.endsWith(char) ? url.slice(0, -1) : url
 }

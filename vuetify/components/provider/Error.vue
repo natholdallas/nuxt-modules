@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import { useError, navigateTo } from 'nuxt/app'
+
 const error = useError()
 </script>
 
 <template>
   <div class="vhc">
-    <div class="flexcol justify-center">
+    <div class="flex flex-col justify-center">
       <VEmptyState
         v-if="error?.status === 404"
         headline="Whoops, 404"

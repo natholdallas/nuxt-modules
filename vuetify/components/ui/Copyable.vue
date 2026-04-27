@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div v-if="text" class="flex-sm gap-1 items-center">
+  <div v-if="text" class="flex items-center">
     <VBtn
       class="text-none"
       @click="

@@ -1,3 +1,6 @@
+import { useNuxtApp } from 'nuxt/app'
+import { shallowReactive } from 'vue'
+
 export const snackbar = shallowReactive({
   show: false,
   message: <undefined | string>'',
@@ -6,7 +9,8 @@ export const snackbar = shallowReactive({
 })
 
 export function useSnackBar() {
-  const t = useNuxtApp().$i18n.t
+  const i18n: any = useNuxtApp()?.$i18n
+  const t = i18n.t
   return {
     success(msg: string = t('success')) {
       snackbar.message = msg
