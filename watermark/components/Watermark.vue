@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useRuntimeConfig } from 'nuxt/app';
-import type { ModuleOptions } from '../types';
+import { useRuntimeConfig } from 'nuxt/app'
+import type { ModuleOptions } from '../types'
 
 const config = useRuntimeConfig().public.watermark as ModuleOptions
 </script>
