@@ -36,7 +36,7 @@ defineProps<{ label?: string }>()
 </script>
 
 <template>
-  <!-- <div class="flexcol-md"> -->
+  <!-- <div class="flex flex-col gap-4"> -->
   <!--   <VAlert v-if="!files.length && showAlert" :text="text" density="compact" type="warning" /> -->
   <!--   <VFileUpload v-model="files" @update:model-value="onUpload" density="compact" /> -->
   <!--   <VSpacer /> -->
