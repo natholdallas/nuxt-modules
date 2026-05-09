@@ -15,13 +15,13 @@ const model = defineModel<Record<string, any>>()
 </script>
 
 <template>
-  <UiForm v-model="model" @submit="$emit('submit')" :validationSchema="schema" class="space-y-4">
-    <UiAlert v-if="error" variant="destructive" class="mb-4">
-      <UiAlertDescription>{{ error }}</UiAlertDescription>
-    </UiAlert>
+  <VForm v-model="model" @submit="$emit('submit')" :validationSchema="schema" class="space-y-4">
+    <VAlert v-if="error" variant="destructive" class="mb-4">
+      <VAlertDescription>{{ error }}</VAlertDescription>
+    </VAlert>
     <slot />
-    <UiButton :disabled="loading" class="w-full" type="submit">
+    <VButton :disabled="loading" class="w-full" type="submit">
       {{ text || $t('submit') }}
-    </UiButton>
-  </UiForm>
+    </VButton>
+  </VForm>
 </template>

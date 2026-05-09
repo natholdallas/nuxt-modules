@@ -15,6 +15,7 @@ export default defineNuxtModule({
     addComponentsDir({
       path: resolver.resolve('./components'),
       prefix: 'V',
+      extensions: ['vue'],
     })
   },
 })

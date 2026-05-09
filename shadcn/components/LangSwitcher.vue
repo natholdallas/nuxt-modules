@@ -9,14 +9,14 @@ defineEmits<{
 </script>
 
 <template>
-  <UiSelect :model-value="options" @update:model-value="(v: any) => $emit('update', v)">
-    <UiSelectTrigger class="w-30">
-      <UiSelectValue>{{ value }}</UiSelectValue>
-    </UiSelectTrigger>
-    <UiSelectContent>
-      <UiSelectItem v-for="item in options" :key="item.value" :value="item.value">
+  <VSelect :model-value="options" @update:model-value="(v: any) => $emit('update', v)">
+    <VSelectTrigger class="w-30">
+      <VSelectValue>{{ value }}</VSelectValue>
+    </VSelectTrigger>
+    <VSelectContent>
+      <VSelectItem v-for="item in options" :key="item.value" :value="item.value">
         {{ item.label }}
-      </UiSelectItem>
-    </UiSelectContent>
-  </UiSelect>
+      </VSelectItem>
+    </VSelectContent>
+  </VSelect>
 </template>

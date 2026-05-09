@@ -18,7 +18,7 @@ const isLoading = computed(() =>
 <template>
   <div :class="['size-full min-h-0 flex flex-col', scroll ? 'overflow-auto' : undefined]">
     <div v-if="isLoading" class="flex flex-col items-center justify-center flex-1">
-      <UiSpinner />
+      <VSpinner />
     </div>
     <div v-else :class="$attrs.class" class="flex-1">
       <slot></slot>
