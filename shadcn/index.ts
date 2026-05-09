@@ -15,6 +15,11 @@ export default defineNuxtModule({
     const resolver = createResolver(import.meta.url)
 
     addComponentsDir({
+      path: resolver.resolve('./components/ui'),
+      prefix: 'V',
+    })
+
+    addComponentsDir({
       path: resolver.resolve('./components/modules'),
       prefix: 'N',
     })
