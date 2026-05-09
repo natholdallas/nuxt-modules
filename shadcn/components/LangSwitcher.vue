@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  options: any
+  options: { key: any; value: any; label: any }[]
   value: any
 }>()
 defineEmits<{
@@ -9,12 +9,12 @@ defineEmits<{
 </script>
 
 <template>
-  <VSelect :model-value="options" @update:model-value="(v: any) => $emit('update', v)">
+  <VSelect :model-value="value" @update:model-value="(v: any) => $emit('update', v)">
     <VSelectTrigger class="w-30">
       <VSelectValue>{{ value }}</VSelectValue>
     </VSelectTrigger>
     <VSelectContent>
-      <VSelectItem v-for="item in options" :key="item.value" :value="item.value">
+      <VSelectItem v-for="item in options" :key="item.key" :value="item.value">
         {{ item.label }}
       </VSelectItem>
     </VSelectContent>
