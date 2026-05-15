@@ -22,6 +22,10 @@ export default {
   'no.data': '暂无数据',
   'no.data.desc': '这样的场景正在整个星系中不断上演',
 
+  // switch
+  'switch.theme': '切换主题',
+  'switch.locale': '切换语言',
+
   // words
   'success': '成功',
   'error': '错误',

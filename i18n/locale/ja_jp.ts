@@ -22,6 +22,10 @@ export default {
   'no.data': 'データがありません',
   'no.data.desc': 'このような状況は銀河系中で毎日のように発生しています',
 
+  // switch
+  'switch.theme': 'テーマを切り替え',
+  'switch.locale': '言語を切り替え',
+
   // words
   'success': '成功',
   'error': 'エラー',
