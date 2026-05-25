@@ -16,22 +16,22 @@ const open = defineModel<boolean>('open', { default: false })
 </script>
 
 <template>
-  <VDialog v-model:open="open" modal>
-    <VDialogContent>
-      <VDialogTitle v-show="!!title">{{ title }}</VDialogTitle>
-      <VDialogDescription v-show="!!description">{{ description }}</VDialogDescription>
+  <UiDialog v-model:open="open" modal>
+    <UiDialogContent>
+      <UiDialogTitle v-show="!!title">{{ title }}</UiDialogTitle>
+      <UiDialogDescription v-show="!!description">{{ description }}</UiDialogDescription>
       <div>
         <slot />
       </div>
-      <VDialogFooter v-if="!noFooter">
-        <VButton v-if="!noCancel" @click="$emit('cancel')" :disabled="loading" variant="secondary">
+      <UiDialogFooter v-if="!noFooter">
+        <UiButton v-if="!noCancel" @click="$emit('cancel')" :disabled="loading" variant="secondary">
           {{ $t('cancel') }}
-        </VButton>
-        <VButton v-if="!noConfirm" @click="$emit('confirm')" :disabled="loading" variant="default">
-          <VSpinner v-if="loading" class="animate-spin" />
+        </UiButton>
+        <UiButton v-if="!noConfirm" @click="$emit('confirm')" :disabled="loading" variant="default">
+          <UiSpinner v-if="loading" class="animate-spin" />
           {{ $t('confirm') }}
-        </VButton>
-      </VDialogFooter>
-    </VDialogContent>
-  </VDialog>
+        </UiButton>
+      </UiDialogFooter>
+    </UiDialogContent>
+  </UiDialog>
 </template>

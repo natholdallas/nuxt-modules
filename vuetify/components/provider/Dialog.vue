@@ -3,7 +3,7 @@ import { dialog } from '../../composables/dialog'
 </script>
 
 <template>
-  <NDialog
+  <VxDialog
     v-model="dialog.show"
     :title="dialog.title || $t('dialog')"
     :content="dialog.content || $t('dialog.desc')"

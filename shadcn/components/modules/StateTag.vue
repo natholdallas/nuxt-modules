@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-  <VBadge :variant="state ? 'default' : 'secondary'">
+  <UiBadge :variant="state ? 'default' : 'secondary'">
     {{ state ? $t('enabled') : $t('disabled') }}
-  </VBadge>
+  </UiBadge>
 </template>

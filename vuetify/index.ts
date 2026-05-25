@@ -56,7 +56,7 @@ export default defineNuxtModule({
 
     addComponentsDir({
       path: resolver.resolve('./components/modules'),
-      prefix: 'N',
+      prefix: 'Vx',
     })
     addComponentsDir({
       path: resolver.resolve('./components'),

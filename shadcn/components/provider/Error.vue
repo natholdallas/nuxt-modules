@@ -6,14 +6,14 @@ const error = useError()
 
 <template>
   <div class="vhc">
-    <VCard v-if="error?.status === 404" class="border-0 shadow-none">
-      <VCardContent class="flex flex-col items-center justify-center gap-4 text-center">
+    <UiCard v-if="error?.status === 404" class="border-0 shadow-none">
+      <UiCardContent class="flex flex-col items-center justify-center gap-4 text-center">
         <h1 class="text-6xl font-bold">{{ error.status }}</h1>
         <p class="text-2xl font-semibold">{{ error.message }}</p>
-      </VCardContent>
-      <VCardFooter class="w-full">
-        <VButton class="w-full font-semibold" @click="navigateTo('/')">Go Back</VButton>
-      </VCardFooter>
-    </VCard>
+      </UiCardContent>
+      <UiCardFooter class="w-full">
+        <UiButton class="w-full font-semibold" @click="navigateTo('/')">Go Back</UiButton>
+      </UiCardFooter>
+    </UiCard>
   </div>
 </template>

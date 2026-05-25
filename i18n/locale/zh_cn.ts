@@ -44,6 +44,9 @@ export default {
   'select': '选择',
   'enabled': '启用',
   'disabled': '禁用',
+  'action': '操作',
+  'max': '最大',
+  'min': '最小',
 
   // backend
   'err.unknown': '未知错误',

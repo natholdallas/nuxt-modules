@@ -11,20 +11,20 @@ const model = defineModel<string>()
 </script>
 
 <template>
-  <VFormField v-slot="{ componentField }" :name="name">
-    <VFormItem>
-      <VFormLabel>{{ label }}</VFormLabel>
-      <VFormControl>
-        <VSelect v-bind="componentField" v-model="model">
-          <VSelectTrigger class="w-full">
-            <VSelectValue>{{ value }}</VSelectValue>
-          </VSelectTrigger>
-          <VSelectContent>
+  <UiFormField v-slot="{ componentField }" :name="name">
+    <UiFormItem>
+      <UiFormLabel>{{ label }}</UiFormLabel>
+      <UiFormControl>
+        <UiSelect v-bind="componentField" v-model="model">
+          <UiSelectTrigger class="w-full">
+            <UiSelectValue>{{ value }}</UiSelectValue>
+          </UiSelectTrigger>
+          <UiSelectContent>
             <slot />
-          </VSelectContent>
-        </VSelect>
-      </VFormControl>
-      <VFormMessage />
-    </VFormItem>
-  </VFormField>
+          </UiSelectContent>
+        </UiSelect>
+      </UiFormControl>
+      <UiFormMessage />
+    </UiFormItem>
+  </UiFormField>
 </template>

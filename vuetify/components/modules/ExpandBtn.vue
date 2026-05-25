@@ -8,7 +8,7 @@ defineEmits<{
 }>()
 </script>
 <template>
-  <NActionBtn
+  <VxActionBtn
     @click="$emit('toggle', item)"
     :icon="$emit('expanded', item) ? 'mdi-chevron-up' : 'mdi-chevron-down'"
     density="comfortable"

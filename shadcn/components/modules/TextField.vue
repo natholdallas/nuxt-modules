@@ -10,13 +10,13 @@ const model = defineModel<string>()
 </script>
 
 <template>
-  <VFormField v-slot="{ componentField }" :name="name">
-    <VFormItem>
-      <VFormLabel>{{ label }}</VFormLabel>
-      <VFormControl>
-        <VInput v-bind="componentField" v-model="model" :placeholder="placeholder" :type="type" />
-      </VFormControl>
-      <VFormMessage />
-    </VFormItem>
-  </VFormField>
+  <UiFormField v-slot="{ componentField }" :name="name">
+    <UiFormItem>
+      <UiFormLabel>{{ label }}</UiFormLabel>
+      <UiFormControl>
+        <UiInput v-bind="componentField" v-model="model" :placeholder="placeholder" :type="type" />
+      </UiFormControl>
+      <UiFormMessage />
+    </UiFormItem>
+  </UiFormField>
 </template>

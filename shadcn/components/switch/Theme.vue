@@ -11,9 +11,9 @@ const toggleDark = useToggle(isDark)
 </script>
 
 <template>
-  <VSwitch v-if="switch" :model-value="isDark" @update:model-value="toggleDark()" />
-  <VButton v-else variant="ghost" size="icon" @click="toggleDark()">
+  <UiSwitch v-if="switch" :model-value="isDark" @update:model-value="toggleDark()" />
+  <UiButton v-else variant="ghost" size="icon" @click="toggleDark()">
     <Sun v-if="isDark" class="w-5 h-5" />
     <Moon v-else class="w-5 h-5" />
-  </VButton>
+  </UiButton>
 </template>

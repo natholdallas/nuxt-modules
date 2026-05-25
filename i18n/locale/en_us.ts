@@ -44,6 +44,9 @@ export default {
   'select': 'Select',
   'enabled': 'Enabled',
   'disabled': 'Disabled',
+  'action': 'Action',
+  'max': 'Max',
+  'min': 'Min',
 
   // backend
   'err.unknown': 'Unknown error',

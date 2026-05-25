@@ -13,11 +13,11 @@ const model = defineModel<number>()
 </script>
 
 <template>
-  <VFormField v-slot="{ componentField }" :name="name">
-    <VFormItem>
-      <VFormLabel>{{ label }}</VFormLabel>
-      <VFormControl>
-        <VNumberField
+  <UiFormField v-slot="{ componentField }" :name="name">
+    <UiFormItem>
+      <UiFormLabel>{{ label }}</UiFormLabel>
+      <UiFormControl>
+        <UiNumberField
           v-bind="componentField"
           v-model="model"
           :default-value="defaultValue"
@@ -25,14 +25,14 @@ const model = defineModel<number>()
           :max="max"
           :placeholder="placeholder"
         >
-          <VNumberFieldContent>
-            <VNumberFieldDecrement />
-            <VNumberFieldInput />
-            <VNumberFieldIncrement />
-          </VNumberFieldContent>
-        </VNumberField>
-      </VFormControl>
-      <VFormMessage />
-    </VFormItem>
-  </VFormField>
+          <UiNumberFieldContent>
+            <UiNumberFieldDecrement />
+            <UiNumberFieldInput />
+            <UiNumberFieldIncrement />
+          </UiNumberFieldContent>
+        </UiNumberField>
+      </UiFormControl>
+      <UiFormMessage />
+    </UiFormItem>
+  </UiFormField>
 </template>

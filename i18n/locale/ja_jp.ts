@@ -44,6 +44,9 @@ export default {
   'select': '選択',
   'enabled': '有効',
   'disabled': '無効',
+  'action': 'アクション',
+  'max': '最大',
+  'min': '最小',
 
   // backend
   'err.unknown': '不明なエラー',

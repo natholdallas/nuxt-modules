@@ -11,7 +11,7 @@ defineEmits<{
 </script>
 
 <template>
-  <VForm
+  <UiForm
     @submit="$emit('submit')"
     :validationSchema="schema"
     :initial-values="model"
@@ -21,8 +21,8 @@ defineEmits<{
     <!--   <VAlertDescription>{{ error }}</VAlertDescription> -->
     <!-- </VAlert> -->
     <slot />
-    <VButton :disabled="loading" class="w-full" type="submit">
+    <UiButton :disabled="loading" class="w-full" type="submit">
       {{ text || $t('submit') }}
-    </VButton>
-  </VForm>
+    </UiButton>
+  </UiForm>
 </template>
