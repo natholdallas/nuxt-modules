@@ -9,7 +9,6 @@
     "@natholdallas/unocss": "workspace:^",
     "@unovis/vue": "^1.6.5",
     "@unovis/ts": "^1.6.5",
-    "@tanstack/vue-table": "^8.21.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-vue-next": "^0.563.0",
@@ -17,8 +16,16 @@
     "shadcn-nuxt": "^2.4.3",
     "tailwind-merge": "^3.4.0",
     "unocss-preset-shadcn": "^1.0.1",
+    "@tanstack/vue-table": "^8.21.3",
+    "@vee-validate/zod": "^4.15.1",
+    "@vueuse/core": "^14.2.1",
+    "embla-carousel-vue": "^8.6.0",
     "reka-ui": "^2.9.6",
-    "vue-sonner": "^2.0.9"
+    "vaul-vue": "^0.4.1",
+    "vee-validate": "^4.15.1",
+    "vue-input-otp": "^0.3.2",
+    "vue-sonner": "^2.0.9",
+    "zod": "3.25.76"
   },
   "devDependencies": {
     "@nuxt/kit": "^4.4.2"

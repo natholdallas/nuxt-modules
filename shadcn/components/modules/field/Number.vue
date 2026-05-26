@@ -1,7 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-  name: string
-  label: string
+  name?: string
+  label?: string
   placeholder?: string
   type?: string
   defaultValue?: number
@@ -13,9 +13,9 @@ const model = defineModel<number>()
 </script>
 
 <template>
-  <UiFormField v-slot="{ componentField }" :name="name">
+  <UiFormField v-if="name" v-slot="{ componentField }" :name="name">
     <UiFormItem>
-      <UiFormLabel>{{ label }}</UiFormLabel>
+      <UiFormLabel v-if="label">{{ label }}</UiFormLabel>
       <UiFormControl>
         <UiNumberField
           v-bind="componentField"
@@ -35,4 +35,11 @@ const model = defineModel<number>()
       <UiFormMessage />
     </UiFormItem>
   </UiFormField>
+  <UiNumberField v-else v-model="model" :default-value="defaultValue" :min="min" :max="max">
+    <UiNumberFieldContent>
+      <UiNumberFieldDecrement />
+      <UiNumberFieldInput />
+      <UiNumberFieldIncrement />
+    </UiNumberFieldContent>
+  </UiNumberField>
 </template>
