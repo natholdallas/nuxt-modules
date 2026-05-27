@@ -6,9 +6,8 @@ export default defineNuxtModule({
   },
 
   moduleDependencies: {
-    'shadcn-nuxt': {},
     '@natholdallas/i18n': {},
-    '@natholdallas/unocss': {},
+    'shadcn-nuxt': {},
   },
 
   setup() {

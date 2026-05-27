@@ -1,3 +1,4 @@
+import type { ModuleOptions as NuxtIconOptions } from '@nuxt/icon'
 import { addImportsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
 import type { ModuleOptions as DayjsOptions } from 'dayjs-nuxt'
 import type { ModuleOptions as NuxtOgImageOptions } from 'nuxt-og-image'
@@ -8,7 +9,13 @@ export default defineNuxtModule({
   },
 
   moduleDependencies: {
+    '@nuxt/fonts': {},
+    '@nuxt/eslint': {},
+    '@nuxt/test-utils': {},
     '@nuxtjs/seo': {},
+    '@nuxtjs/device': {},
+    '@vueuse/nuxt': {},
+
     'dayjs-nuxt': {
       defaults: <Partial<DayjsOptions>>{
         locales: ['en', 'zh-cn'],
@@ -22,11 +29,21 @@ export default defineNuxtModule({
         enabled: false,
       },
     },
-    '@vueuse/nuxt': {},
+    '@nuxt/icon': {
+      defaults: <Partial<NuxtIconOptions>>{
+        mode: 'svg',
+        provider: 'server',
+      },
+    },
   },
 
-  setup() {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    nuxt.options.experimental.typedPages = true
+    nuxt.options.future.compatibilityVersion = 4
+    nuxt.options.runtimeConfig.public.apiBase = ''
+    nuxt.options.build.analyze = true
 
     addImportsDir([resolver.resolve('./lib'), resolver.resolve('./composables')])
   },

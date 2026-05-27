@@ -22,6 +22,14 @@ export default {
   'no.data': 'データがありません',
   'no.data.desc': 'このような状況は銀河系中で毎日のように発生しています',
 
+  // copy
+  'copied.success': 'コピー成功',
+  'copied.failed': 'コピー失敗',
+  'copied.warning': 'テキストが空で、コピーできません',
+
+  // filter
+  'filter.condition': 'フィルター条件',
+
   // switch
   'switch.theme': 'テーマを切り替え',
   'switch.locale': '言語を切り替え',
@@ -33,6 +41,7 @@ export default {
   'info': '情報',
   'yes': 'はい',
   'collapse': '折りたたむ',
+  'expand': '展開',
   'date': '日付',
   'confirm': '確認',
   'cancel': 'キャンセル',
@@ -47,6 +56,8 @@ export default {
   'action': 'アクション',
   'max': '最大',
   'min': '最小',
+  'reset': 'リセット',
+  'time': '時間',
 
   // backend
   'err.unknown': '不明なエラー',
@@ -60,6 +71,7 @@ export default {
   'err.invalid.suffixes.img': '画像的形式は以下のみです：jpg、png、webp、jpeg',
   'err.invalid.suffixes.vid': '视频の形式は以下のみです：mp4',
   'err.invalid.data': 'データが有効ではありません',
+  'err.not.implement': '未実装',
 
   // va
   'va.required': '必須',

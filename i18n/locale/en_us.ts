@@ -26,6 +26,14 @@ export default {
   'switch.theme': 'Switch Theme',
   'switch.locale': 'Switch Locale',
 
+  // copy
+  'copied.success': 'Copied Successfully',
+  'copied.failed': 'Copy Failed',
+  'copied.warning': 'Text is empty, nothing to copy',
+
+  // filter
+  'filter.condition': 'Filter Condition',
+
   // words
   'success': 'Success',
   'error': 'Error',
@@ -33,6 +41,7 @@ export default {
   'info': 'Info',
   'yes': 'Yes',
   'collapse': 'Collapse',
+  'expand': 'Expand',
   'date': 'Date',
   'confirm': 'Confirm',
   'cancel': 'Cancel',
@@ -47,6 +56,8 @@ export default {
   'action': 'Action',
   'max': 'Max',
   'min': 'Min',
+  'reset': 'Reset',
+  'time': 'Time',
 
   // backend
   'err.unknown': 'Unknown error',
@@ -60,6 +71,7 @@ export default {
   'err.invalid.suffixes.img': 'Image must be one of: jpg, png, webp, jpeg',
   'err.invalid.suffixes.vid': 'Video upload format must be: mp4',
   'err.invalid.data': 'Invalid Data',
+  'err.not.implement': 'Not Implement',
 
   // va
   'va.required': 'Required',

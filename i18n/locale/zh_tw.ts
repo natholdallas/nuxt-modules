@@ -22,6 +22,14 @@ export default {
   'no.data': '暫無資料',
   'no.data.desc': '這樣的場景正在整個星系中不斷上演',
 
+  // copy
+  'copied.success': '複製成功',
+  'copied.failed': '複製失敗',
+  'copied.warning': '文字為空，無法複製',
+
+  // filter
+  'filter.condition': '篩選條件',
+
   // switch
   'switch.theme': '切換主題',
   'switch.locale': '切換語言',
@@ -33,6 +41,7 @@ export default {
   'info': '資訊',
   'yes': '是',
   'collapse': '收起',
+  'expand': '展開',
   'date': '日期',
   'confirm': '確認',
   'cancel': '取消',
@@ -47,6 +56,8 @@ export default {
   'action': '操作',
   'max': '最大',
   'min': '最小',
+  'reset': '重設',
+  'time': '時間',
 
   // backend
   'err.unknown': '未知錯誤',
@@ -60,6 +71,7 @@ export default {
   'err.invalid.suffixes.img': '圖片必須是以下格式：jpg、png、webp、jpeg',
   'err.invalid.suffixes.vid': '影片上傳格式必須是：mp4',
   'err.invalid.data': '資料無效',
+  'err.not.implement': '未實作',
 
   // va
   'va.required': '必填',
