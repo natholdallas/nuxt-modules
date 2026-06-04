@@ -21,9 +21,9 @@ export function useCrud<I, O = I>(mi?: I, mo?: O) {
       crud.mi.value = cloneDeep(mi)
       crud.mo.value = cloneDeep(mo)
     },
-    smc(mi?: I) {
-      if (!mi) {
-        crud.mi.value = cloneDeep(mi)
+    smc(v?: Partial<I>) {
+      if (v) {
+        Object.assign(crud.mi.value, v)
       }
       crud.sc.value = true
     },
