@@ -7,12 +7,5 @@ export default defineNuxtModule({
 
   moduleDependencies: {
     '@pinia/nuxt': {},
-    'pinia-plugin-persistedstate/nuxt': {},
   },
-
-  // async setup() {
-  //   const resolver = createResolver(import.meta.url)
-  //
-  //   addImportsDir(resolver.resolve('./stores'))
-  // },
 })
