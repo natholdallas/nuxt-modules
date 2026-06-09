@@ -9,7 +9,7 @@ export default defineNuxtModule({
   },
 
   moduleDependencies: {
-    '@nuxt/fonts': {},
+    // '@nuxt/fonts': {},
     '@nuxt/eslint': {},
     '@nuxt/test-utils': {},
     '@nuxtjs/seo': {},
@@ -42,6 +42,7 @@ export default defineNuxtModule({
 
     nuxt.options.experimental.typedPages = true
     nuxt.options.future.compatibilityVersion = 4
+    nuxt.options.experimental.viteEnvironmentApi = true
     nuxt.options.runtimeConfig.public.apiBase = ''
     nuxt.options.build.analyze = true
 
