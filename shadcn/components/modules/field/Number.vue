@@ -1,12 +1,14 @@
 <script setup lang="ts">
+import type { NumberFieldRootProps } from 'reka-ui'
+
 defineProps<{
   name?: string
   label?: string
-  placeholder?: string
-  type?: string
-  defaultValue?: number
-  min?: number
-  max?: number
+  defaultValue?: NumberFieldRootProps['defaultValue']
+  min?: NumberFieldRootProps['min']
+  max?: NumberFieldRootProps['max']
+  format?: NumberFieldRootProps['formatOptions']
+  step?: NumberFieldRootProps['step']
 }>()
 
 const model = defineModel<number>()
@@ -23,7 +25,8 @@ const model = defineModel<number>()
           :default-value="defaultValue"
           :min="min"
           :max="max"
-          :placeholder="placeholder"
+          :format-options="format"
+          :step="step"
         >
           <UiNumberFieldContent>
             <UiNumberFieldDecrement />

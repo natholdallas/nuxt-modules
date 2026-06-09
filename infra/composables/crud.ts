@@ -37,3 +37,6 @@ export function useCrud<I, O = I>(mi?: I, mo?: O) {
     },
   }
 }
+
+
+// export function useNeoCrud(v: {}) {}
