@@ -2,20 +2,15 @@
 defineProps<{
   name?: string
   label?: string
+  trueValue?: boolean
+  falseValue?: boolean
 }>()
 
 const model = defineModel<boolean>()
 </script>
 
 <template>
-  <UiFormField v-if="name" v-slot="{ componentField }" :name="name">
-    <UiFormItem>
-      <UiFormLabel v-if="label">{{ label }}</UiFormLabel>
-      <UiFormControl>
-        <UiSwitch v-bind="componentField" v-model="model" />
-      </UiFormControl>
-      <UiFormMessage />
-    </UiFormItem>
-  </UiFormField>
-  <UiSwitch v-else v-model="model" />
+  <UixField v-slot="{ component }" :name="name" :label="label">
+    <UiSwitch v-bind="component" v-model="model" :trueValue="trueValue" :falseValue="falseValue" />
+  </UixField>
 </template>

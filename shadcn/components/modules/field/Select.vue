@@ -15,28 +15,14 @@ const model = defineModel<any>()
 </script>
 
 <template>
-  <UiFormField v-if="name" v-slot="{ componentField }" :name="name">
-    <UiFormItem>
-      <UiFormLabel v-if="label">{{ label }}</UiFormLabel>
-      <UiFormControl>
-        <UiSelect v-bind="componentField" v-model="model">
-          <UiSelectTrigger :class="triggerClass">
-            <UiSelectValue>{{ value }}</UiSelectValue>
-          </UiSelectTrigger>
-          <UiSelectContent :class="$attrs.class">
-            <slot />
-          </UiSelectContent>
-        </UiSelect>
-      </UiFormControl>
-      <UiFormMessage />
-    </UiFormItem>
-  </UiFormField>
-  <UiSelect v-else v-model="model">
-    <UiSelectTrigger>
-      <UiSelectValue>{{ value }}</UiSelectValue>
-    </UiSelectTrigger>
-    <UiSelectContent>
-      <slot />
-    </UiSelectContent>
-  </UiSelect>
+  <UixField v-slot="{ component }" :name="name" :label="label">
+    <UiSelect v-model="model">
+      <UiSelectTrigger :class="triggerClass">
+        <UiSelectValue>{{ value }}</UiSelectValue>
+      </UiSelectTrigger>
+      <UiSelectContent :class="$attrs.class">
+        <slot :component="component" />
+      </UiSelectContent>
+    </UiSelect>
+  </UixField>
 </template>

@@ -15,34 +15,21 @@ const model = defineModel<number>()
 </script>
 
 <template>
-  <UiFormField v-if="name" v-slot="{ componentField }" :name="name">
-    <UiFormItem>
-      <UiFormLabel v-if="label">{{ label }}</UiFormLabel>
-      <UiFormControl>
-        <UiNumberField
-          v-bind="componentField"
-          v-model="model"
-          :default-value="defaultValue"
-          :min="min"
-          :max="max"
-          :format-options="format"
-          :step="step"
-        >
-          <UiNumberFieldContent>
-            <UiNumberFieldDecrement />
-            <UiNumberFieldInput />
-            <UiNumberFieldIncrement />
-          </UiNumberFieldContent>
-        </UiNumberField>
-      </UiFormControl>
-      <UiFormMessage />
-    </UiFormItem>
-  </UiFormField>
-  <UiNumberField v-else v-model="model" :default-value="defaultValue" :min="min" :max="max">
-    <UiNumberFieldContent>
-      <UiNumberFieldDecrement />
-      <UiNumberFieldInput />
-      <UiNumberFieldIncrement />
-    </UiNumberFieldContent>
-  </UiNumberField>
+  <UixField v-slot="{ component }" :name="name" :label="label">
+    <UiNumberField
+      v-bind="component"
+      v-model="model"
+      :default-value="defaultValue"
+      :min="min"
+      :max="max"
+      :format-options="format"
+      :step="step"
+    >
+      <UiNumberFieldContent>
+        <UiNumberFieldDecrement />
+        <UiNumberFieldInput />
+        <UiNumberFieldIncrement />
+      </UiNumberFieldContent>
+    </UiNumberField>
+  </UixField>
 </template>
