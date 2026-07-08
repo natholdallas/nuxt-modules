@@ -2,7 +2,6 @@
 defineProps<{
   name?: string
   label?: string
-  placeholder?: string
 }>()
 
 const model = defineModel<string>()
@@ -10,6 +9,6 @@ const model = defineModel<string>()
 
 <template>
   <UixField v-slot="{ component }" :name="name" :label="label">
-    <UiInput v-bind="component" v-model="model" :placeholder="placeholder" />
+    <UiTextarea v-bind="component" v-model="model" />
   </UixField>
 </template>
