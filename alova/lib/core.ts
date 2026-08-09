@@ -157,7 +157,7 @@ function mkd(data?: any, includes?: string[], excludes?: string[]) {
 }
 
 function mkq(data: Arg = {}) {
-  return Object.fromEntries(Object.entries(data).filter(([_k, v]) => v !== null))
+  return Object.fromEntries(Object.entries(data).filter(([_k, v]) => v != null))
 }
 
 function mkc(c: RequestConfig<any> = {}) {

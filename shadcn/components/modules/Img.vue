@@ -22,13 +22,13 @@ defineProps<{
   width?: number | string
 }>()
 
-const flagLoaded = ref(false)
+const loaded = ref(true)
 </script>
 
 <template>
   <img
-    @load="flagLoaded = true"
-    @error="flagLoaded = false"
+    v-show="loaded"
+    @error="loaded = false"
     :alt="alt"
     :crossorigin="crossorigin"
     :decoding="decoding"
