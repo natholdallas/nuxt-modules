@@ -18,9 +18,9 @@ const open = defineModel<boolean>('open', { default: false })
 <template>
   <UiDialog v-model:open="open" modal>
     <UiDialogContent>
-      <UiDialogTitle v-if="title">{{ title }}</UiDialogTitle>
-      <UiDialogDescription v-if="description">{{ description }}</UiDialogDescription>
-      <div>
+      <UiDialogTitle>{{ title ?? '' }}</UiDialogTitle>
+      <UiDialogDescription>{{ description ?? '' }}</UiDialogDescription>
+      <div">
         <slot />
       </div>
       <UiDialogFooter v-if="!noFooter">
