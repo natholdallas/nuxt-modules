@@ -20,7 +20,7 @@ const open = defineModel<boolean>('open', { default: false })
     <UiDialogContent>
       <UiDialogTitle>{{ title ?? '' }}</UiDialogTitle>
       <UiDialogDescription>{{ description ?? '' }}</UiDialogDescription>
-      <div">
+      <div>
         <slot />
       </div>
       <UiDialogFooter v-if="!noFooter">
