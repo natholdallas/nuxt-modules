@@ -16,12 +16,15 @@ const isLoading = computed(() =>
 </script>
 
 <template>
-  <div :class="['size-full min-h-0 flex flex-col', scroll ? 'overflow-auto' : undefined]">
-    <div v-if="isLoading" class="flex flex-col items-center justify-center flex-1">
-      <UiSpinner />
-    </div>
-    <div v-else :class="$attrs.class" class="flex-1">
+  <div :class="['size-full min-h-0 flex flex-col relative', scroll ? 'overflow-auto' : undefined]">
+    <div :class="$attrs.class" class="flex-1">
       <slot></slot>
+    </div>
+    <div
+      v-if="isLoading"
+      class="absolute inset-0 flex items-center justify-center bg-background/60 z-10"
+    >
+      <UiSpinner />
     </div>
     <slot name="modals"></slot>
     <slot name="drawers"></slot>
