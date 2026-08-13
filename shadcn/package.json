@@ -4,23 +4,23 @@
   "main": "index.ts",
   "description": "nuxt kit module",
   "dependencies": {
+    "@lucide/vue": "^1.31.0",
     "@natholdallas/i18n": "workspace:^",
     "@natholdallas/infra": "workspace:^",
     "@natholdallas/unocss": "workspace:^",
     "@tanstack/vue-table": "^8.21.3",
-    "@unovis/ts": "^1.6.5",
-    "@unovis/vue": "^1.6.5",
-    "@lucide/vue": "^1.16.0",
-    "@vueuse/core": "^14.3.0",
+    "@unovis/ts": "^1.6.7",
+    "@unovis/vue": "^1.6.7",
     "@vee-validate/zod": "^4.15.1",
-    "shadcn-nuxt": "^2.6.2",
-    "shadcn-vue": "^2.7.3",
-    "tailwind-merge": "^3.4.0",
+    "@vueuse/core": "^14.4.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-vue": "^8.6.0",
     "radix-vue": "^1.9.17",
-    "reka-ui": "^2.9.8",
+    "reka-ui": "^2.10.3",
+    "shadcn-nuxt": "^2.8.2",
+    "shadcn-vue": "^2.8.2",
+    "tailwind-merge": "^3.6.0",
     "vaul-vue": "^0.4.1",
     "vee-validate": "^4.15.1",
     "vue-input-otp": "^0.3.2",
@@ -28,6 +28,6 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
-    "@nuxt/kit": "^4.4.2"
+    "@nuxt/kit": "^4.5.2"
   }
 }

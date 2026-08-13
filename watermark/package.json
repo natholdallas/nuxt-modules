@@ -4,6 +4,6 @@
   "main": "index.ts",
   "desciption": "watermark module",
   "dependencies": {
-    "defu": "^6.1.4"
+    "defu": "^6.1.7"
   }
 }

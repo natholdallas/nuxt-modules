@@ -7,6 +7,6 @@
     "@pinia/nuxt": "^0.11.3"
   },
   "devDependencies": {
-    "@nuxt/kit": "^4.4.2"
+    "@nuxt/kit": "^4.5.2"
   }
 }
