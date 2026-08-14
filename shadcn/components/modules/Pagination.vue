@@ -27,6 +27,8 @@ const effectiveSize = computed(() => pageSize.value || props.size || 20)
       :items-per-page="effectiveSize"
       :total="total"
       :default-page="defaultPage"
+      :show-edges="true"
+      :sibling-count="0"
     >
       <UiPaginationContent v-slot="{ items }">
         <UiPaginationPrevious>
@@ -40,20 +42,25 @@ const effectiveSize = computed(() => pageSize.value || props.size || 20)
           >
             {{ item.value }}
           </UiPaginationItem>
+          <UiPaginationEllipsis v-else-if="item.type === 'ellipsis'" :index="index" />
         </template>
-        <UiPaginationEllipsis :index="4" />
         <UiPaginationNext>
           <ChevronRight />
         </UiPaginationNext>
+        <UiNumberField v-model="page" class="w-[100px]">
+          <UiNumberFieldContent>
+            <UiNumberFieldInput />
+          </UiNumberFieldContent>
+        </UiNumberField>
+        <UiSelect v-model="pageSize">
+          <UiSelectTrigger>
+            <UiSelectValue />
+          </UiSelectTrigger>
+          <UiSelectContent>
+            <UiSelectItem v-for="o in sizeOptions" :key="o" :value="o"> {{ o }}</UiSelectItem>
+          </UiSelectContent>
+        </UiSelect>
       </UiPaginationContent>
-      <UiSelect v-model="pageSize">
-        <UiSelectTrigger>
-          <UiSelectValue />
-        </UiSelectTrigger>
-        <UiSelectContent>
-          <UiSelectItem v-for="o in sizeOptions" :key="o" :value="o">{{ o }}</UiSelectItem>
-        </UiSelectContent>
-      </UiSelect>
     </UiPagination>
   </div>
 </template>
