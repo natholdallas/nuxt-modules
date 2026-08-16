@@ -11,6 +11,7 @@ export default defineNuxtModule({
       defaults: <Partial<VuetifyModuleOptions>>{
         moduleOptions: {
           styles: 'sass',
+          prefixComposables: true,
         },
         vuetifyOptions: {
           defaults: {
