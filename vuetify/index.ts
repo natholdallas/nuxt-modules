@@ -10,7 +10,9 @@ export default defineNuxtModule({
     'vuetify-nuxt-module': {
       defaults: <Partial<VuetifyModuleOptions>>{
         moduleOptions: {
-          styles: 'sass',
+          styles: {
+            cache: true,
+          },
           prefixComposables: true,
         },
         vuetifyOptions: {
@@ -50,6 +52,7 @@ export default defineNuxtModule({
     },
     '@natholdallas/i18n': {},
     '@natholdallas/infra': {},
+    '@natholdallas/unocss': {},
   },
 
   setup() {

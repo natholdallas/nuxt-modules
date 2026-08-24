@@ -7,6 +7,7 @@ export default defineNuxtModule({
 
   moduleDependencies: {
     '@natholdallas/i18n': {},
+    '@natholdallas/tailwindcss': {},
     'shadcn-nuxt': {},
   },
 
