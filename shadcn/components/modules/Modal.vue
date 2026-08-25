@@ -1,11 +1,12 @@
 <script setup lang="ts">
-defineProps<{
+const props = defineProps<{
   title?: string
   description?: string
   loading?: boolean
   noFooter?: boolean
   noCancel?: boolean
   noConfirm?: boolean
+  class?: string
 }>()
 defineEmits<{
   (e: 'cancel'): void
@@ -17,7 +18,7 @@ const open = defineModel<boolean>('open', { default: false })
 
 <template>
   <UiDialog v-model:open="open" modal>
-    <UiDialogContent>
+    <UiDialogContent :class="class">
       <UiDialogTitle>{{ title ?? '' }}</UiDialogTitle>
       <UiDialogDescription>{{ description ?? '' }}</UiDialogDescription>
       <div>

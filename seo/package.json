@@ -1,0 +1,10 @@
+
+{
+  "name": "@natholdallas/seo",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "description": "nuxt infrastructure module",
+  "dependencies": {
+    "@nuxtjs/seo": "^5.3.14"
+  }
+}

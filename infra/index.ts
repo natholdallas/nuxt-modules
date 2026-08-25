@@ -12,7 +12,6 @@ export default defineNuxtModule({
     // '@nuxt/fonts': {},
     '@nuxt/eslint': {},
     '@nuxt/test-utils': {},
-    '@nuxtjs/seo': {},
     '@nuxtjs/device': {},
     '@vueuse/nuxt': {},
 
