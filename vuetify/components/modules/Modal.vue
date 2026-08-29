@@ -10,11 +10,11 @@ const show = defineModel<boolean>()
 
 <template>
   <VDialog v-model="show" :max-width="maxWidth || '500'">
-    <VSheet>
+    <VCard>
       <VCardTitle v-if="title">{{ title }}</VCardTitle>
       <div :class="[noPadding ? undefined : 'p-2']">
         <slot></slot>
       </div>
-    </VSheet>
+    </VCard>
   </VDialog>
 </template>

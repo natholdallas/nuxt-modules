@@ -5,5 +5,5 @@ defineProps<{
 </script>
 
 <template>
-  <VChip :color="state ? 'success' : 'disabled'" :text="state ? $t('enabled') : $t('disabled')" />
+  <VChip :color="state ? 'green' : 'grey'" :text="state ? $t('enabled') : $t('disabled')" />
 </template>

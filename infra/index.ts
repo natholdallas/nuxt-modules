@@ -1,6 +1,8 @@
 import type { ModuleOptions as NuxtIconOptions } from '@nuxt/icon'
-import { addImportsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
+import { addComponentsDir, addImportsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
+import type { ModuleOptions as PwaModuleOptions } from '@vite-pwa/nuxt'
 import type { ModuleOptions as DayjsOptions } from 'dayjs-nuxt'
+import { defu } from 'defu'
 import type { ModuleOptions as NuxtOgImageOptions } from 'nuxt-og-image'
 
 export default defineNuxtModule({
@@ -9,9 +11,9 @@ export default defineNuxtModule({
   },
 
   moduleDependencies: {
-    // '@nuxt/fonts': {},
     '@nuxt/eslint': {},
     '@nuxt/test-utils': {},
+    '@nuxtjs/seo': {},
     '@nuxtjs/device': {},
     '@vueuse/nuxt': {},
 
@@ -34,6 +36,30 @@ export default defineNuxtModule({
         provider: 'server',
       },
     },
+    '@vite-pwa/nuxt': {
+      defaults: <Partial<PwaModuleOptions>>{
+        registerType: 'autoUpdate',
+        manifest: {
+          name: 'App',
+          short_name: 'App',
+          theme_color: '#141414',
+          description: 'App',
+          icons: [
+            {
+              src: 'icon.png',
+              sizes: '512x512',
+              type: 'image/png',
+            },
+          ],
+          display: 'standalone',
+        },
+        registerWebManifestInRouteRules: true,
+        devOptions: {
+          enabled: false,
+          type: 'module',
+        },
+      },
+    },
   },
 
   setup(_options, nuxt) {
@@ -44,6 +70,18 @@ export default defineNuxtModule({
     nuxt.options.experimental.viteEnvironmentApi = true
     nuxt.options.runtimeConfig.public.apiBase = ''
     nuxt.options.build.analyze = true
+    nuxt.options.vite.build = defu(nuxt.options.vite.build, {
+      terserOptions: {
+        compress: {
+          drop_console: true,
+          drop_debugger: true,
+        },
+      },
+    })
+
+    addComponentsDir({
+      path: resolver.resolve('./components'),
+    })
 
     addImportsDir([resolver.resolve('./lib'), resolver.resolve('./composables')])
   },

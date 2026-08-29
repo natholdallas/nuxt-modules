@@ -14,23 +14,23 @@ export function useSnackBar() {
   return {
     success(msg: string = t('success')) {
       snackbar.message = msg
-      snackbar.color = 'success'
+      snackbar.color = 'green'
       snackbar.timeout = 1000
       snackbar.show = true
     },
     error(msg: string = t('error')) {
       snackbar.message = msg
-      snackbar.color = 'error'
+      snackbar.color = 'red'
       snackbar.timeout = 5000
       snackbar.show = true
     },
     warn(msg: string = t('warning')) {
       snackbar.message = msg
-      snackbar.color = 'warning'
+      snackbar.color = 'amber'
       snackbar.timeout = 5000
       snackbar.show = true
     },
-    info(msg: string = t('info')) {
+    info(msg: string = t('blue')) {
       snackbar.message = msg
       snackbar.color = 'info'
       snackbar.timeout = 3000
