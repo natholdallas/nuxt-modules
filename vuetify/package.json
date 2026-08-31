@@ -6,11 +6,10 @@
   "dependencies": {
     "@natholdallas/i18n": "workspace:^",
     "@natholdallas/infra": "workspace:^",
-    "@vuetify/mcp": "^0.10.0",
+    "@vuetify/mcp": "^0.11.0",
     "@tailwindcss/postcss": "^4.2.1",
     "sass": "^1.98.0",
     "tailwindcss": "^4.3.3",
-    "eslint-config-vuetify": "^4.3.4",
     "vuetify": "4.1.12",
     "vuetify-nuxt-module": "1.0.0-rc.5"
   }
