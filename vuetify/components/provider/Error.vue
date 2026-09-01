@@ -5,7 +5,7 @@ const error = useError()
 </script>
 
 <template>
-  <div class="vhc">
+  <div class="fixed w-full h-full flex flex-col justify-center items-center">
     <div class="flex flex-col justify-center">
       <VEmptyState
         v-if="error?.status === 404"

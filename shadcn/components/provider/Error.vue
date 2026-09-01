@@ -5,7 +5,7 @@ const error = useError()
 </script>
 
 <template>
-  <div class="vhc">
+  <div class="fixed w-full h-full flex flex-col justify-center items-center">
     <UiCard v-if="error?.status === 404" class="border-0 shadow-none">
       <UiCardContent class="flex flex-col items-center justify-center gap-4 text-center">
         <h1 class="text-6xl font-bold">{{ error.status }}</h1>
