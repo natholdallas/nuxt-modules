@@ -34,6 +34,23 @@ export default {
   'switch.theme': '切换主题',
   'switch.locale': '切换语言',
 
+  // error
+  'error.sorry': '抱歉',
+  'error.401.title': '未授权',
+  'error.401.desc': '您的会话已过期，请重新登录。',
+  'error.403.title': '禁止访问',
+  'error.403.desc': '您没有权限访问此页面。',
+  'error.404.title': '页面未找到',
+  'error.404.desc': '您访问的页面不存在或已被移动。',
+  'error.500.title': '服务器内部错误',
+  'error.500.desc': '服务器出了点问题，请稍后重试。',
+  'error.503.title': '服务不可用',
+  'error.503.desc': '服务暂时不可用，请稍后重试。',
+  'error.title': '出错了',
+  'error.desc': '发生意外错误，请稍后重试。',
+  'error.back.home': '返回首页',
+  'error.reload': '重新加载',
+
   // words
   'success': '成功',
   'error': '错误',

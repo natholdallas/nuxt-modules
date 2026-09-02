@@ -34,6 +34,23 @@ export default {
   'switch.theme': '切換主題',
   'switch.locale': '切換語言',
 
+  // error
+  'error.sorry': '抱歉',
+  'error.401.title': '未授權',
+  'error.401.desc': '您的工作階段已過期，請重新登入。',
+  'error.403.title': '禁止存取',
+  'error.403.desc': '您沒有權限存取此頁面。',
+  'error.404.title': '頁面未找到',
+  'error.404.desc': '您造訪的頁面不存在或已被移除。',
+  'error.500.title': '伺服器內部錯誤',
+  'error.500.desc': '伺服器發生問題，請稍後再試。',
+  'error.503.title': '服務不可用',
+  'error.503.desc': '服務暫時不可用，請稍後再試。',
+  'error.title': '發生錯誤',
+  'error.desc': '發生意外錯誤，請稍後再試。',
+  'error.back.home': '返回首頁',
+  'error.reload': '重新載入',
+
   // words
   'success': '成功',
   'error': '錯誤',

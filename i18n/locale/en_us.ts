@@ -26,6 +26,23 @@ export default {
   'switch.theme': 'Switch Theme',
   'switch.locale': 'Switch Locale',
 
+  // error
+  'error.sorry': 'Sorry',
+  'error.401.title': 'Unauthorized',
+  'error.401.desc': 'Your session has expired. Please sign in again to continue.',
+  'error.403.title': 'Access Forbidden',
+  'error.403.desc': "You don't have permission to view this page.",
+  'error.404.title': 'Page Not Found',
+  'error.404.desc': 'The page you are looking for does not exist or may have been moved.',
+  'error.500.title': 'Internal Server Error',
+  'error.500.desc': 'Something went wrong on our end. Please try again later.',
+  'error.503.title': 'Service Unavailable',
+  'error.503.desc': 'The service is temporarily unavailable. Please try again later.',
+  'error.title': 'Something Went Wrong',
+  'error.desc': 'An unexpected error occurred. Please try again.',
+  'error.back.home': 'Back to Home',
+  'error.reload': 'Reload',
+
   // copy
   'copied.success': 'Copied Successfully',
   'copied.failed': 'Copy Failed',
