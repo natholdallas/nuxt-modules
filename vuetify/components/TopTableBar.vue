@@ -1,6 +1,5 @@
 <script setup lang="ts">
 defineProps<{
-  text?: string
   noAppend?: boolean
 }>()
 
@@ -10,8 +9,6 @@ const showCreate = defineModel<boolean>()
 <template>
   <div class="top-table-bar overflow-x-auto">
     <div class="flex min-w-full w-max items-center gap-2 px-3 py-2">
-      <span v-if="text" class="shrink-0 whitespace-nowrap font-medium">{{ text }}</span>
-      <slot v-else />
       <VBtn
         v-if="!noAppend"
         prepend-icon="mdi-plus"
@@ -19,6 +16,7 @@ const showCreate = defineModel<boolean>()
         class="shrink-0"
         @click="showCreate = true"
       />
+      <slot />
     </div>
   </div>
 </template>

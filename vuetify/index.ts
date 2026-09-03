@@ -13,6 +13,11 @@ export default defineNuxtModule({
           styles: {
             configFile: 'assets/styles/sass/settings.scss',
             cache: true,
+            colors: true,
+            utilities: true,
+            experimental: {
+              cache: true,
+            },
           },
           prefixComposables: true,
           ssrClientHints: {
@@ -29,7 +34,9 @@ export default defineNuxtModule({
           theme: {
             // default 'system' requires `ssr: false` to avoid hydration warnings
             defaultTheme: 'system',
-            utilities: false,
+            // Vuetify 4 must generate `bg-*`/`text-*` color utilities (e.g. `.bg-primary`)
+            // for the `color="primary"` prop to work; `utilities: false` disables them
+            utilities: true,
           },
           display: {
             mobileBreakpoint: 'md',

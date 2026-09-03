@@ -15,14 +15,16 @@ defineEmits<{
     @submit="$emit('submit')"
     :validationSchema="schema"
     :initial-values="model"
-    class="space-y-4"
+    class="flex flex-col gap-4"
   >
     <!-- <VAlert v-if="error" variant="destructive" class="mb-4"> -->
     <!--   <VAlertDescription>{{ error }}</VAlertDescription> -->
     <!-- </VAlert> -->
     <slot />
-    <UiButton :disabled="loading" class="w-full" type="submit">
-      {{ text || $t('submit') }}
-    </UiButton>
+    <slot name="actions">
+      <UiButton :disabled="loading" class="mt-auto w-full" type="submit">
+        {{ text || $t('submit') }}
+      </UiButton>
+    </slot>
   </UiForm>
 </template>

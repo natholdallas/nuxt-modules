@@ -3,6 +3,7 @@ import { clearError, useError } from '#app'
 
 const { t } = useI18n()
 const error = useError()
+const statusCode = error.value?.status
 const conf = useConf()
 
 interface ErrorInfo {
@@ -14,7 +15,7 @@ interface ErrorInfo {
 }
 
 const info = computed<ErrorInfo>(() => {
-  switch (error.value?.status) {
+  switch (statusCode) {
     case 401:
       return {
         icon: 'mdi-lock-question',
@@ -58,7 +59,7 @@ const info = computed<ErrorInfo>(() => {
     default:
       return {
         icon: 'mdi-alert-octagon-outline',
-        code: error.value?.status ? String(error.value.status) : '',
+        code: statusCode ? String(statusCode) : '',
         title: t('error.title'),
         text: t('error.desc'),
         tone: 'danger',

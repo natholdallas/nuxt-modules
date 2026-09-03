@@ -14,6 +14,7 @@ import type { Component } from 'vue'
 
 const { t } = useI18n()
 const error = useError()
+const statusCode = error.value?.status
 
 interface ErrorInfo {
   icon: Component
@@ -24,7 +25,7 @@ interface ErrorInfo {
 }
 
 const info = computed<ErrorInfo>(() => {
-  switch (error.value?.status) {
+  switch (statusCode) {
     case 401:
       return {
         icon: KeyRound,
@@ -68,7 +69,7 @@ const info = computed<ErrorInfo>(() => {
     default:
       return {
         icon: OctagonAlert,
-        code: error.value?.status ? String(error.value.status) : '',
+        code: statusCode ? String(statusCode) : '',
         title: t('error.title'),
         desc: t('error.desc'),
         tone: 'danger',
