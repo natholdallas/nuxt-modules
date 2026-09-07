@@ -5,5 +5,8 @@
   "description": "nuxt pinia module",
   "dependencies": {
     "@pinia/nuxt": "^1.0.2"
+  },
+  "devdependencies": {
+    "@nuxt/kit": "^4.5.2"
   }
 }

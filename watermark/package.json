@@ -5,5 +5,8 @@
   "desciption": "watermark module",
   "dependencies": {
     "defu": "^6.1.7"
+  },
+  "devdependencies": {
+    "@nuxt/kit": "^4.5.2"
   }
 }

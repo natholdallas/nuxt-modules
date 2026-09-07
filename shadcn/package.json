@@ -29,5 +29,8 @@
     "vue-input-otp": "^0.3.2",
     "vue-sonner": "^2.0.9",
     "zod": "3.25.76"
+  },
+  "devdependencies": {
+    "@nuxt/kit": "^4.5.2"
   }
 }

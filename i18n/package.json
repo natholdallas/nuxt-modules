@@ -5,5 +5,8 @@
   "description": "i18n nuxt module",
   "dependencies": {
     "@nuxtjs/i18n": "^10.6.0"
+  },
+  "devdependencies": {
+    "@nuxt/kit": "^4.5.2"
   }
 }

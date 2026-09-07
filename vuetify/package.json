@@ -12,5 +12,8 @@
     "tailwindcss": "^4.3.3",
     "vuetify": "4.1.12",
     "vuetify-nuxt-module": "1.0.0-rc.5"
+  },
+  "devdependencies": {
+    "@nuxt/kit": "^4.5.2"
   }
 }
