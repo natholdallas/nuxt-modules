@@ -20,6 +20,7 @@ const props = withDefaults(
     emptyText?: string
     actions?: TableAction[]
     opsPosition?: 'start' | 'end'
+    showId?: boolean
   }>(),
   {
     title: '',
@@ -30,6 +31,7 @@ const props = withDefaults(
     emptyText: '',
     actions: () => [],
     opsPosition: 'start',
+    showId: false,
   },
 )
 
@@ -84,6 +86,7 @@ function toggleOne(v: any) {
             <UiTableHead v-if="selectable" class="w-10">
               <UiCheckbox :model-value="allSelected" @update:model-value="toggleAll" />
             </UiTableHead>
+            <UiTableHead v-if="showId">{{ $t('model.id') }}</UiTableHead>
             <template v-if="opsPosition === 'start'">
               <UiTableHead v-if="hasOps">{{ $t('action') }}</UiTableHead>
               <slot name="thead" />
@@ -102,6 +105,7 @@ function toggleOne(v: any) {
                 @update:model-value="toggleOne(item[selectKey])"
               />
             </UiTableCell>
+            <UiTableCell v-if="showId">{{ item.id }}</UiTableCell>
             <UiTableCell v-if="opsPosition === 'start' && hasOps" class="flex gap-1">
               <slot name="ops" :item="item">
                 <slot name="ops-prepend" :item="item" />
