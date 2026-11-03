@@ -4,6 +4,7 @@ defineProps<{
   text?: string
   schema?: Record<string, any>
   model?: Record<string, any>
+  error?: string
 }>()
 defineEmits<{
   (e: 'submit'): void
@@ -17,9 +18,9 @@ defineEmits<{
     :initial-values="model"
     class="flex flex-col gap-4"
   >
-    <!-- <VAlert v-if="error" variant="destructive" class="mb-4"> -->
-    <!--   <VAlertDescription>{{ error }}</VAlertDescription> -->
-    <!-- </VAlert> -->
+    <UiAlert v-if="error" variant="destructive" class="mb-0">
+      <UiAlertDescription>{{ error }}</UiAlertDescription>
+    </UiAlert>
     <slot />
     <slot name="actions">
       <UiButton :disabled="loading" class="mt-auto w-full" type="submit">
