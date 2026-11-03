@@ -6,6 +6,10 @@ defineProps<{
   tooltip?: string
   disabled?: boolean
 }>()
+
+defineEmits<{
+  (e: 'click', ev: MouseEvent): void
+}>()
 </script>
 
 <template>
@@ -23,6 +27,7 @@ defineProps<{
         class="text-none"
         color="medium-emphasis"
         variant="text"
+        @click="$emit('click', $event)"
       />
     </template>
   </VTooltip>
@@ -37,6 +42,7 @@ defineProps<{
     class="text-none"
     color="medium-emphasis"
     variant="text"
+    @click="$emit('click', $event)"
     v-else
   />
 </template>
