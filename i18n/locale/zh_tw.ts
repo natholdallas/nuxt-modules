@@ -85,10 +85,18 @@ export default {
   'err.sign.in.failed': '使用者名稱或密碼錯誤',
   'err.sign.up.failed': '使用者名稱可能已存在',
   'err.operation.failed': '操作失敗',
+  'err.code.in.use': '該代號已被入單/帳號引用，不能刪除，請改用「停用」',
   'err.invalid.suffixes.img': '圖片必須是以下格式：jpg、png、webp、jpeg',
   'err.invalid.suffixes.vid': '影片上傳格式必須是：mp4',
   'err.invalid.data': '資料無效',
   'err.not.implement': '未實作',
+  'err.password.incorrect': '原密碼不正確',
+  'err.invalid.amount': '金額無效',
+  'err.invalid.rate': '匯率/比例無效',
+  'err.network': '網路異常，請稍後重試',
+  'err.not.permitted': '您沒有權限執行此操作',
+  'err.not.found': '資源不存在',
+  'err.server': '伺服器出了點問題，請稍後重試',
 
   // va
   'va.required': '必填',

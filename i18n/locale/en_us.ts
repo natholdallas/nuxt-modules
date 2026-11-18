@@ -85,10 +85,18 @@ export default {
   'err.sign.in.failed': 'Incorrect username or password',
   'err.sign.up.failed': 'Username may already exist',
   'err.operation.failed': 'Operation Failed',
+  'err.code.in.use': 'Code is referenced by cashflow or account, disable it instead',
   'err.invalid.suffixes.img': 'Image must be one of: jpg, png, webp, jpeg',
   'err.invalid.suffixes.vid': 'Video upload format must be: mp4',
   'err.invalid.data': 'Invalid Data',
   'err.not.implement': 'Not Implement',
+  'err.password.incorrect': 'Old password is incorrect',
+  'err.invalid.amount': 'Invalid amount',
+  'err.invalid.rate': 'Invalid rate/ratio',
+  'err.network': 'Network error, please try again',
+  'err.not.permitted': 'You do not have permission to perform this operation',
+  'err.not.found': 'Resource not found',
+  'err.server': 'Server error, please try again later',
 
   // va
   'va.required': 'Required',

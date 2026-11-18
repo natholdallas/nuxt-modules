@@ -85,10 +85,19 @@ export default {
   'err.sign.in.failed': 'ユーザー名またはパスワードが正しくありません',
   'err.sign.up.failed': 'ユーザー名は既に存在する可能性があります',
   'err.operation.failed': '操作に失敗しました',
+  'err.code.in.use':
+    'このコードは入金/アカウントで使用されており削除できません。「無効化」で対応してください',
   'err.invalid.suffixes.img': '画像的形式は以下のみです：jpg、png、webp、jpeg',
   'err.invalid.suffixes.vid': '视频の形式は以下のみです：mp4',
   'err.invalid.data': 'データが有効ではありません',
   'err.not.implement': '未実装',
+  'err.password.incorrect': '旧パスワードが正しくありません',
+  'err.invalid.amount': '金額が無効です',
+  'err.invalid.rate': 'レート/比率が無効です',
+  'err.network': 'ネットワークエラーが発生しました。後でもう一度お試しください',
+  'err.not.permitted': 'この操作を実行する権限がありません',
+  'err.not.found': 'リソースが見つかりません',
+  'err.server': 'サーバーエラーが発生しました。後でもう一度お試しください',
 
   // va
   'va.required': '必須',

@@ -85,10 +85,18 @@ export default {
   'err.sign.in.failed': '用户名或密码错误',
   'err.sign.up.failed': '用户名可能已存在',
   'err.operation.failed': '操作失败',
+  'err.code.in.use': '该代号已被入单/账号引用，不能删除，请改用「停用」',
   'err.invalid.suffixes.img': '图片必须是以下格式：jpg、png、webp、jpeg',
   'err.invalid.suffixes.vid': '视频上传格式必须是：mp4',
   'err.invalid.data': '数据无效',
   'err.not.implement': '未实现',
+  'err.password.incorrect': '原密码不正确',
+  'err.invalid.amount': '金额无效',
+  'err.invalid.rate': '汇率/比例无效',
+  'err.network': '网络异常，请稍后重试',
+  'err.not.permitted': '您没有权限执行此操作',
+  'err.not.found': '资源不存在',
+  'err.server': '服务器开小差了，请稍后重试',
 
   // va
   'va.required': '必填',
