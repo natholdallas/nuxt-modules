@@ -44,11 +44,14 @@ export default defineNuxtModule({
           short_name: 'App',
           theme_color: '#141414',
           description: 'App',
+          // Reference the favicon that every app actually ships. The previous
+          // `icon.png` did not exist in any app's public/ directory, so the
+          // manifest pointed at a 404 once PWA was enabled.
           icons: [
             {
-              src: 'icon.png',
-              sizes: '512x512',
-              type: 'image/png',
+              src: 'favicon.ico',
+              sizes: '64x64 32x32 24x24 16x16',
+              type: 'image/x-icon',
             },
           ],
           display: 'standalone',
