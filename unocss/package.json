@@ -1,8 +1,19 @@
 {
   "name": "@natholdallas/unocss",
-  "version": "0.1.0",
-  "main": "index.ts",
+  "version": "0.2.0",
   "description": "unocss nuxt module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./*": {
+      "types": "./*.ts",
+      "default": "./*.ts"
+    }
+  },
   "dependencies": {
     "@unocss/nuxt": "^66.8.1",
     "@unocss/preset-icons": "^66.8.1",

@@ -39,6 +39,6 @@ function noEndSlash(url: string) {
   return url.endsWith('/') ? url.slice(0, -1) : url
 }
 
-function noStartSlash(url: any) {
+function noStartSlash(url: string) {
   return url.startsWith('/') ? url.slice(1) : url
 }

@@ -1,8 +1,19 @@
 {
   "name": "@natholdallas/tauri",
-  "main": "index.ts",
+  "version": "0.2.0",
   "description": "tauri nuxt module",
-  "version": "0.1.0",
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./*": {
+      "types": "./*.ts",
+      "default": "./*.ts"
+    }
+  },
   "dependencies": {
     "@tauri-apps/api": "^2.11.1",
     "@tauri-apps/cli": "^2.11.4"

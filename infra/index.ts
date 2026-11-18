@@ -68,8 +68,13 @@ export default defineNuxtModule({
     nuxt.options.experimental.typedPages = true
     nuxt.options.future.compatibilityVersion = 4
     nuxt.options.experimental.viteEnvironmentApi = true
-    nuxt.options.runtimeConfig.public.apiBase = ''
-    nuxt.options.build.analyze = true
+    // Do NOT hard-code runtimeConfig.public.apiBase here. Module setup runs after
+    // the app's nuxt.config.ts, so assigning it would silently override an app
+    // that sets its own value. Nuxt already resolves NUXT_PUBLIC_API_BASE from
+    // the environment; main.sh derives it from domains[]/app_env at build time.
+    // Bundle analysis is opt-in: it slows every build and emits nothing unless
+    // the app actually inspects the report.
+    nuxt.options.build.analyze = process.env.ANALYZE === 'true'
     nuxt.options.vite.build = defu(nuxt.options.vite.build, {
       terserOptions: {
         compress: {

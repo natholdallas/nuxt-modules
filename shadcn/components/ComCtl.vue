@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import isArray from 'lodash/isArray'
 import { computed } from 'vue'
 
 defineOptions({
@@ -10,8 +9,11 @@ const props = defineProps<{
   loading?: boolean | boolean[]
 }>()
 
+// Native Array.isArray instead of lodash/isArray: this component is shipped by a
+// shared module that does not declare lodash, so importing it would rely on a
+// hoisted phantom dependency.
 const isLoading = computed(() =>
-  isArray(props.loading) ? props.loading.some((x) => x) : props.loading,
+  Array.isArray(props.loading) ? props.loading.some((x) => x) : props.loading,
 )
 </script>
 

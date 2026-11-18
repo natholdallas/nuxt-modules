@@ -1,11 +1,22 @@
 {
   "name": "@natholdallas/watermark",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.ts",
-  "desciption": "watermark module",
+  "types": "index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./*": {
+      "types": "./*.ts",
+      "default": "./*.ts"
+    }
+  },
   "dependencies": {
     "defu": "^6.1.7"
   },
+  "desciption": "watermark module",
   "devdependencies": {
     "@nuxt/kit": "^4.5.2"
   }

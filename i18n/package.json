@@ -1,8 +1,19 @@
 {
   "name": "@natholdallas/i18n",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "version": "1.1.0",
   "description": "i18n nuxt module",
+  "main": "index.ts",
+  "types": "index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    },
+    "./*": {
+      "types": "./*.ts",
+      "default": "./*.ts"
+    }
+  },
   "dependencies": {
     "@nuxtjs/i18n": "^10.6.0"
   },
