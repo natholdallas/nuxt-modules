@@ -79,6 +79,15 @@ export default defineNuxtModule({
     // the app actually inspects the report.
     nuxt.options.build.analyze = process.env.ANALYZE === 'true'
     nuxt.options.vite.build = defu(nuxt.options.vite.build, {
+      // Rolldown's bundlerTimings check (Vite 8 default) prints a PLUGIN_TIMINGS
+      // block on every build. With `experimental.viteEnvironmentApi` the client
+      // and SSR builds run concurrently, and `nuxt:ssr-styles` starts its SSR
+      // load hook by awaiting `nuxt._clientBuild` — rolldown counts that await as
+      // plugin time, so the whole client build is attributed to a single wait and
+      // the report is never actionable. Keep the build, drop the log.
+      rolldownOptions: {
+        checks: { bundlerTimings: false },
+      },
       terserOptions: {
         compress: {
           drop_console: true,
