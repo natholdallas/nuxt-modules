@@ -1,6 +1,7 @@
 {
   "name": "@natholdallas/alova",
   "version": "1.1.0",
+  "type": "module",
   "description": "alova nuxt module",
   "main": "index.ts",
   "types": "index.ts",

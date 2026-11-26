@@ -1,6 +1,7 @@
 {
   "name": "@natholdallas/i18n",
   "version": "1.1.0",
+  "type": "module",
   "description": "i18n nuxt module",
   "main": "index.ts",
   "types": "index.ts",
